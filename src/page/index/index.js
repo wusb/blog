@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './index.scss';
+import { Link } from 'react-router-dom';
 
 class IndexPage extends React.Component {
 	constructor(){
@@ -7,12 +8,13 @@ class IndexPage extends React.Component {
 	}
 
 	render() {
-	    return (
+		return (
 			<div className={s.container}>
 				Hello World
+				<Link to='/blog'>blog</Link>
 			</div>
-	    );
+		);
 	}
 }
 
-module.exports = IndexPage;
+export default IndexPage;
