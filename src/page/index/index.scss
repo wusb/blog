@@ -1,0 +1,47 @@
+.container{
+  height: 100%;
+  background-color: #2fef6c;
+}
+
+.photo{
+  width: 100%;
+  height: 270px;
+  background-image: url("https://i.loli.net/2018/02/10/5a7e594b59c07.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.introduce{
+  margin: 30px 20px;
+
+  p{
+    font-size: 20px;
+    color: #337373;
+  }
+
+  div{
+    margin-top: 20px;
+    line-height: 36px;
+    font-size: 21px;
+    color: #fff;
+  }
+}
+
+.link{
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+
+  a{
+    + a{
+      margin-left: 14px;
+    }
+  }
+
+  i{
+    font-size: 28px;
+    color: #fff;
+  }
+}
