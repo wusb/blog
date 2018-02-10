@@ -1,14 +1,15 @@
 const path = require('path');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
     app: ['./src/main.js']
   },
   output: {
-    path: path.resolve(__dirname, '../build'),
+    path: path.resolve(__dirname, '../../dist'),
     filename: '[name].js',
-    publicPath: "/build/",
+    publicPath: "/",
   },
   module: {
     loaders: [
@@ -42,6 +43,23 @@ module.exports = {
     port: process.env.PORT || 8097
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({
+      filename: './index.html',
+      template: './public/index.html',
+      inject: "body",
+      minify: {
+        caseSensitive: false,
+        collapseBooleanAttributes: true,
+        collapseWhitespace: true
+      },
+      hash: true,
+      cache: true,
+      showErrors: true,
+      chunks: "app",
+      chunksSortMode: "auto",
+      excludeChunks: "",
+      xhtml: false
+    })
   ]
 };
