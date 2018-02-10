@@ -1,0 +1,38 @@
+html, body, div, span, applet, button, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  font-family: PingFang-SC, "San Francisco", "Source Sans", Rotobo, "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  list-style: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+
+html,body{
+  min-height: 100%;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  font-size: 12px;
+  -webkit-font-smoothing: antialiased;
+  -webkit-touch-callout: none;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a:focus,
+input:focus,
+button:focus {
+  outline: 0;
+}
