@@ -13,9 +13,9 @@ import Blog from "./page/blog/index";
 const router = (
     <Router>
       <Switch>
-        <Route path="/index" component={Index} />
+        <Route exact path="/" component={Index} />
         <Route path="/blog" component={Blog} />
-        <Redirect from="/" to="/index"/>
+        <Redirect from="/" to="/"/>
       </Switch>
     </Router>
 )
