@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import router from './router';
 
+import '../public/assets/js/rem';
+
 import '../public/assets/css/reset.scss';
 import '../public/assets/css/global.scss';
 
