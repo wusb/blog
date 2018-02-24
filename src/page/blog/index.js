@@ -14,7 +14,7 @@ class IndexPage extends React.Component {
   }
 
   componentDidMount(){
-
+    document.title = '个人博客 - 吴胜斌 | simbawu';
     this.getIssues()
   }
 

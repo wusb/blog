@@ -36,6 +36,8 @@ class ArticlePage extends React.Component {
     actions.getIssues(data).then((res) => {
       let issue = res.data.data.repository.issue;
 
+      document.title = `${issue.title} - 个人博客 - 吴胜斌 | simbawu`;
+
       this.setState({
         title: issue.title,
         updatedAt: new Date(issue.updatedAt).format('yyyy-MM-dd'),
