@@ -1,0 +1,25 @@
+@import "/node_modules/github-markdown-css/github-markdown.css";
+
+.markdown{
+  margin: 0 auto;
+  max-width: 760px;
+  padding: 15px;
+
+  ol{
+    list-style: decimal;
+  }
+
+  ol ol, ul ol {
+    list-style: lower-roman;
+  }
+
+  li{
+    list-style: inherit;
+  }
+}
+
+.date{
+  margin: 4px 0 6px;
+  font-size: 15px;
+  color: #8a8a8a;
+}

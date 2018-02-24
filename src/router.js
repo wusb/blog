@@ -9,12 +9,14 @@ import {
 
 import Index from "./page/index/index";
 import Blog from "./page/blog/index";
+import Article from './page/blog/article';
 
 const router = (
     <Router>
       <Switch>
         <Route exact path="/" component={Index} />
-        <Route path="/blog" component={Blog} />
+        <Route exact path="/blog" component={Blog} />
+        <Route path="/blog/:type/:articleId" component={Article} />
         <Redirect from="/" to="/"/>
       </Switch>
     </Router>
