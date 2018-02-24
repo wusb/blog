@@ -1,0 +1,31 @@
+.container{
+  background-color: #f6f6f6;
+  min-height: 100%;
+}
+
+.item{
+  display: block;
+  background-color: #fff;
+  padding: .16rem .2rem;
+  box-shadow: 0 1px 3px rgba(26,26,26,.1);
+
+  & + .item{
+    margin-top: .1rem;
+  }
+}
+
+.title{
+  font-size: .16rem;
+  color: #1a1a1a;
+}
+
+.summary{
+  margin: .04rem 0;
+  font-size: .14rem;
+  color: #666;
+}
+
+.date{
+  font-size: .12rem;
+  color: #999;
+}
