@@ -2,8 +2,8 @@ import React from 'react';
 import s from './article.scss';
 import actions from '../../actions/index';
 import { Link } from 'react-router-dom';
-
 import utils from '../../../tools/utils';
+import 'github-markdown-css';
 
 class ArticlePage extends React.Component {
   constructor(){
