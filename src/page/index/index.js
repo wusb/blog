@@ -20,7 +20,7 @@ class IndexPage extends React.Component {
 	}
 
 	componentDidMount(){
-    this.getLanguage()
+    this.getLanguage();
 	}
 
 	getLanguage(){
@@ -35,8 +35,8 @@ class IndexPage extends React.Component {
         chinese: chinese,
         introduce: {
           welcome: '朋友，你好！',
-          name: '我是吴胜斌',
-          work: '目前在上海担任前端工程师',
+          name: '我是吴胜斌，',
+          work: '目前在上海从事Web前端开发工作，',
           more: '更多关于我的信息，请见下方。'
         }
       })
