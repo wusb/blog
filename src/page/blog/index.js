@@ -19,15 +19,14 @@ class IndexPage extends React.Component {
 
   componentDidMount(){
     document.title = '个人博客 - 吴胜斌 | simbawu';
-
     let currentLabel = this.props.match.params.type;
-
-    this.getIssues(currentLabel);
+    this.getIssues(currentLabel || 'New');
   }
 
   getIssues(label = 'New', page = null){
     let data = {};
-    if(label == 'New'){
+    if(label == 'New' || !this.state.labels.includes(label)){
+      label = 'New';
       data = {
         query: `query {
           repository(owner:"simbawus", name: "blog") {
