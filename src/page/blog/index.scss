@@ -3,6 +3,38 @@
   min-height: 100%;
 }
 
+.labels{
+  overflow-x: auto;
+  white-space: nowrap;
+  background-color: #fff;
+
+  li{
+    display: inline-block;
+    padding: 0 .1rem;
+
+    span{
+      display: block;
+      padding-top: .02rem;
+      height: .44rem;
+      line-height: .44rem;
+      font-size: .16rem;
+      color: #666;
+      cursor: pointer;
+      border-bottom: .02rem solid #fff;
+      transition: all .3s ease-in;
+
+      &.current{
+        color: #00b0ab;
+        border-color: #00b0ab;
+      }
+    }
+  }
+}
+
+.list{
+  margin-top: .1rem;
+}
+
 .item{
   display: block;
   background-color: #fff;
