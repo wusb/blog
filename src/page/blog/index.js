@@ -22,16 +22,12 @@ class IndexPage extends React.Component {
 
     let currentLabel = this.props.match.params.type;
 
-    this.setState({
-      currentLabel: currentLabel
-    });
-
     this.getIssues(currentLabel);
   }
 
-  getIssues(label = null, page = null){
+  getIssues(label = 'New', page = null){
     let data = {};
-    if(label == null || label == 'New'){
+    if(label == 'New'){
       data = {
         query: `query {
           repository(owner:"simbawus", name: "blog") {
@@ -93,7 +89,8 @@ class IndexPage extends React.Component {
 
       this.setState({
         labels: labels,
-        list: list
+        list: list,
+        currentLabel: label
       })
 
     })
