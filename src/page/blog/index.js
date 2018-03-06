@@ -135,7 +135,6 @@ class IndexPage extends React.Component {
   }
 
   chooseLabel(currentLabel){
-    this.handleOpacity(0);
     this.props.history.push(`/blog/${currentLabel}`);
     this.getIssues(currentLabel);
   }
@@ -162,7 +161,7 @@ class IndexPage extends React.Component {
     if (Math.abs(deltaX) > Math.abs(deltaY)){
       if ((this.handleLabelIndex(this.state.currentLabel) > 0 && deltaX > 0) || (this.handleLabelIndex(this.state.currentLabel) <= (this.state.labels.length - 2) && deltaX < 0)){
         //移动页面
-        this.handleOpacity(0);
+        this.handleOpacity(0.2);
         this.localState.isMove = true;
       }
       this.localState.direction = deltaX > 0 ? "right" : "left"; //判断手指滑动的方向
@@ -171,12 +170,9 @@ class IndexPage extends React.Component {
 
   touchEnd(e){
     // e.preventDefault();
-    let translate = 0;
     //计算手指在屏幕上停留的时间
     let deltaT = new Date().getTime() - this.localState.startT;
     let index = 0;
-
-    console.log(deltaT);
     if (this.localState.isMove){ //发生了左右滑动
       //使用动画过渡让页面滑动到最终的位置
       if(deltaT < 300){ //如果停留时间小于300ms,则认为是快速滑动，无论滑动距离是多少，都停留到下一页
@@ -195,9 +191,7 @@ class IndexPage extends React.Component {
         }
       }
 
-      console.log(this.state.labels.indexOf(this.state.currentLabel));
-
-      this.chooseLabel(this.state.labels[this.state.labels.indexOf(this.state.currentLabel) + index]);
+      this.chooseLabel(this.state.labels[this.handleLabelIndex(this.state.currentLabel) + index]);
 
     }
   }
