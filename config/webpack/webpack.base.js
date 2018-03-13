@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const localIp = require('../../tools/ip');
 
 module.exports = {
   entry: {
@@ -49,7 +48,7 @@ module.exports = {
   devServer: {
     inline: true,
     hot: true,
-    host: localIp,
+    host: '0.0.0.0',
     historyApiFallback: true,
     port: process.env.PORT || 8097
   },
