@@ -54,7 +54,7 @@ class ArticlePage extends React.Component {
   render() {
     return (
         <div className={s.markdown}>
-          <h1>{this.state.title}</h1>
+          <h1 className={s.title}>{this.state.title}</h1>
           <p className={s.date}>{this.state.updatedAt}</p>
           <div className='markdown-body' dangerouslySetInnerHTML={this._renderHTML()}>
 
