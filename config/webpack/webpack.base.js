@@ -71,5 +71,10 @@ module.exports = {
       excludeChunks: "",
       xhtml: false
     })
-  ]
+  ],
+  resolve: {
+    alias: {
+      components: path.join(__dirname, '../../components'),
+    }
+  }
 };
