@@ -4,6 +4,7 @@ import actions from '../../actions/index';
 import { Link } from 'react-router-dom';
 import utils from '../../../tools/utils';
 import 'github-markdown-css';
+import Header from 'components/Header';
 
 class ArticlePage extends React.Component {
   constructor(){
@@ -53,11 +54,12 @@ class ArticlePage extends React.Component {
 
   render() {
     return (
-        <div className={s.markdown}>
-          <h1 className={s.title}>{this.state.title}</h1>
-          <p className={s.date}>{this.state.updatedAt}</p>
-          <div className='markdown-body' dangerouslySetInnerHTML={this._renderHTML()}>
-
+        <div>
+          <Header />
+          <div className={s.markdown}>
+            <h1 className={s.title}>{this.state.title}</h1>
+            <p className={s.date}>{this.state.updatedAt}</p>
+            <div className='markdown-body' dangerouslySetInnerHTML={this._renderHTML()}></div>
           </div>
         </div>
     );
