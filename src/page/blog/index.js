@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './index.scss';
-import actions from '../../actions/index';
+import Actions from 'actions';
 import { Link, browserHistory } from 'react-router-dom';
 import Header from 'components/Header';
 
@@ -102,7 +102,7 @@ class IndexPage extends React.Component {
       };
     }
 
-    actions.getIssues(data).then((res) => {
+    Actions.getIssues(data).then((res) => {
       let labels = res.data.data.repository.labels.nodes.map((item, index) => {
         return item.name
       });

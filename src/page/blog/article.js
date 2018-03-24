@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './article.scss';
-import actions from '../../actions/index';
+import Actions from 'actions';
 import { Link } from 'react-router-dom';
 import utils from '../../../tools/utils';
 import 'github-markdown-css';
@@ -34,7 +34,7 @@ class ArticlePage extends React.Component {
       }`
     };
 
-    actions.getIssues(data).then((res) => {
+    Actions.getIssues(data).then((res) => {
       let issue = res.data.data.repository.issue;
 
       document.title = `${issue.title} - 个人博客 - 吴胜斌 | simbawu`;
