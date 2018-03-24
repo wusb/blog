@@ -69,12 +69,8 @@ class IndexPage extends React.Component {
             </div>
           </div>
           <div className={s.link}>
-            <a href="https://github.com/simbawus">
-              <i className='iconfont'>&#xe600;</i>
-            </a>
-            <Link to='/blog'>
-              <i className='iconfont'>&#xe70f;</i>
-            </Link>
+            <a href="https://github.com/simbawus">github</a>
+            <Link to='/blog'>blog</Link>
           </div>
 				</div>
 			</div>

@@ -79,12 +79,16 @@
 .link{
   position: absolute;
   left: 50%;
-  bottom: .2rem;
+  bottom: 0;
   transform: translateX(-50%);
 
   a{
+    padding: 0 .04rem;
+    font-size: .18rem;
+    color: #fff;
+    border-bottom: 1px solid #fff;
     + a{
-      margin-left: .14rem;
+      margin-left: .06rem;
     }
   }
 
