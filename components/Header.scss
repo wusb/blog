@@ -1,0 +1,73 @@
+.container{
+  border-bottom: 1px solid #e6e3e3;
+  background-color: #fff;
+}
+
+.header{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 .1em;
+  height: .5em;
+}
+
+.menuList{
+  display: flex;
+  align-items: center;
+  height: .5em;
+}
+
+.menu{
+  padding: 0 .5em;
+  white-space: nowrap;
+  font-size: .16em;
+  color: #999;
+}
+
+.currentMenu{
+  color: #00b0ab;
+}
+
+.searchBox{
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 .16em;
+  width: .92rem;
+  height: .3em;
+  border: 1px solid #e6e3e3;
+  border-radius: .3em;
+  background-color: #fff;
+  transition: width ease .2s;
+
+  input{
+    flex: 1;
+    width: .4em;
+    font-size: .14em;
+    border: 0;
+  }
+
+  i{
+    width: 1em;
+    cursor: pointer;
+    font-size: .18em;
+    color: #e6e3e3;
+  }
+}
+
+.searchBoxFull{
+  .searchBox{
+    position: absolute;
+    right:0;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .header{
+    margin: 0 auto;
+    max-width: 768px;
+    font-size: 100px;
+  }
+}
