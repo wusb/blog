@@ -2,6 +2,7 @@ import React from 'react';
 import s from './index.scss';
 import actions from '../../actions/index';
 import { Link, browserHistory } from 'react-router-dom';
+import Header from 'components/Header';
 
 import utils from '../../../tools/utils';
 
@@ -12,7 +13,8 @@ class IndexPage extends React.Component {
       labels: [],
       list: [],
       currentLabel: 'New',
-      opacity: 1
+      opacity: 1,
+      headerFixed: false
     };
 
     this.localState = {
@@ -32,12 +34,18 @@ class IndexPage extends React.Component {
     this.touchEnd = this.touchEnd.bind(this);
     this.handleLabelIndex = this.handleLabelIndex.bind(this);
     this.handleOpacity = this.handleOpacity.bind(this);
+    this.handleOnScroll = this.handleOnScroll.bind(this);
   }
 
   componentDidMount(){
     document.title = '个人博客 - 吴胜斌 | simbawu';
+    window.addEventListener('scroll', this.handleOnScroll);
     let currentLabel = this.props.match.params.type;
     this.getIssues(currentLabel || 'New');
+  }
+
+  componentWillUnmount(){
+    window.removeEventListener('scroll', this.handleOnScroll);
   }
 
   getIssues(label = 'New', page = null){
@@ -117,7 +125,9 @@ class IndexPage extends React.Component {
   _renderLabels(){
     return this.state.labels.map((item, index) => {
       return <li key={item} onClick={() => this.chooseLabel(item)}>
-        <span className={item == this.state.currentLabel ? s.current : ''}>{item}</span>
+        <div className={item == this.state.currentLabel ? s.current : ''}>
+          <p>{item}</p>
+        </div>
       </li>
     })
   }
@@ -129,7 +139,7 @@ class IndexPage extends React.Component {
       return <Link key={item.cursor} className={s.item} to={`/blog/${this.state.currentLabel}/${item.node.number}`}>
         <h6 className={s.title}>{item.node.title}</h6>
         <p className={s.summary}>{text}</p>
-        <span className={s.date}>{date}</span>
+        <p className={s.date}>{date}</p>
       </Link>
     })
   }
@@ -206,14 +216,30 @@ class IndexPage extends React.Component {
     return this.state.labels.indexOf(label)
   }
 
+  handleOnScroll(){
+    let scrollY =  window.scrollY;
+    if(scrollY > 50){
+      this.setState({
+        headerFixed: true
+      })
+    }else {
+      this.setState({
+        headerFixed: false
+      })
+    }
+  }
+
   render() {
     return (
-        <div className={s.container} onTouchStart={this.touchStart} onTouchMove={this.touchMove} onTouchEnd={this.touchEnd}>
-          <ul className={s.labels}>
-            {this._renderLabels()}
-          </ul>
-          <div className={s.list} style={{opacity: this.state.opacity}} >
-            {this._renderList()}
+        <div className={s.container}>
+          <Header />
+          <div className={`${s.box} ${this.state.headerFixed ? s.headerFixed : ''}`} onTouchStart={this.touchStart} onTouchMove={this.touchMove} onTouchEnd={this.touchEnd}>
+            <ul className={s.labels}>
+              {this._renderLabels()}
+            </ul>
+            <div className={s.list} style={{opacity: this.state.opacity}} >
+              {this._renderList()}
+            </div>
           </div>
         </div>
     );
