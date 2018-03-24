@@ -17,7 +17,7 @@ const router = (
         <Route exact path="/" component={Index} />
         <Route exact path="/blog" component={Blog} />
         <Route exact path="/blog/:type" component={Blog} />
-        <Route exact path="/blog/:type/:articleId" component={Article} />
+        <Route exact path="/article/:type/:articleId" component={Article} />
         <Redirect from="/" to="/"/>
       </Switch>
     </Router>
