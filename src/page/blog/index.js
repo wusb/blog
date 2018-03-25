@@ -3,7 +3,7 @@ import s from './index.scss';
 import Actions from 'actions';
 import { Link, browserHistory } from 'react-router-dom';
 import Header from 'components/Header';
-import PostItem from 'components/PostItem';
+import PostList from 'components/PostList';
 
 import utils from '../../../tools/utils';
 
@@ -61,7 +61,6 @@ class IndexPage extends React.Component {
               edges{
                 cursor
                 node{
-                  url
                   title
                   updatedAt
                   bodyText
@@ -85,7 +84,6 @@ class IndexPage extends React.Component {
             edges{
               cursor
               node{
-                url
                 title
                 updatedAt
                 bodyText
@@ -130,12 +128,6 @@ class IndexPage extends React.Component {
           <p>{item}</p>
         </div>
       </li>
-    })
-  }
-
-  _renderList(){
-    return this.state.list.map((item, index) => {
-      return <PostItem key={item.cursor} item={item.node} />
     })
   }
 
@@ -233,7 +225,7 @@ class IndexPage extends React.Component {
               {this._renderLabels()}
             </ul>
             <div className={s.list} style={{opacity: this.state.opacity}} >
-              {this._renderList()}
+              <PostList list={this.state.list} />
             </div>
           </div>
         </div>
