@@ -48,33 +48,6 @@
   transition: opacity .6s ease;
 }
 
-.item{
-  display: block;
-  background-color: #fff;
-  padding: .16em .2em;
-  box-shadow: 0 1px 3px rgba(26,26,26,.1);
-
-  & + .item{
-    margin-top: .1em;
-  }
-}
-
-.title{
-  font-size: .16em;
-  color: #1a1a1a;
-}
-
-.summary{
-  margin: .04em 0;
-  font-size: .14em;
-  color: #666;
-}
-
-.date{
-  font-size: .12em;
-  color: #999;
-}
-
 .headerFixed{
   .labels{
     position: fixed;

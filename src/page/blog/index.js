@@ -3,6 +3,7 @@ import s from './index.scss';
 import Actions from 'actions';
 import { Link, browserHistory } from 'react-router-dom';
 import Header from 'components/Header';
+import PostItem from 'components/PostItem';
 
 import utils from '../../../tools/utils';
 
@@ -134,13 +135,7 @@ class IndexPage extends React.Component {
 
   _renderList(){
     return this.state.list.map((item, index) => {
-      let text = utils.autoAddEllipsis(item.node.bodyText, 90);
-      let date = new Date(item.node.updatedAt).format('yyyy-MM-dd');
-      return <Link key={item.cursor} className={s.item} to={`/article/${this.state.currentLabel}/${item.node.number}`}>
-        <h6 className={s.title}>{item.node.title}</h6>
-        <p className={s.summary}>{text}</p>
-        <p className={s.date}>{date}</p>
-      </Link>
+      return <PostItem key={item.cursor} item={item.node} />
     })
   }
 
