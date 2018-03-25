@@ -13,15 +13,19 @@ class SearchPage extends React.Component {
     this.state = {
       list: []
     };
+
+    this.getIssues = this.getIssues.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
   componentDidMount(){
-    let keyWords = utils.getParameterByName('keyWords');
-    document.title = `${keyWords} - 个人博客 - 吴胜斌 | simbawu`;
-    this.getIssues(keyWords);
+    this.getIssues();
   }
 
-  getIssues(keyWords){
+  getIssues(){
+    let keyWords = utils.getParameterByName('keyWords');
+    document.title = `${keyWords} - 个人博客 - 吴胜斌 | simbawu`;
+
     let data = {
       query: `query {
         search(query:"${keyWords} repo:simbawus/blog", type: ISSUE, first: 10) {
@@ -49,11 +53,16 @@ class SearchPage extends React.Component {
     })
   }
 
+  handleSearch(){
+    this.getIssues();
+  }
+
   render() {
     return (
         <div className={s.container}>
-          <Header />
-          <PostList list={this.state.list} />
+          <Header handleSearch={this.handleSearch} />
+          { this.state.list.length > 0 ? <PostList list={this.state.list} /> :
+          <div className={s.noPostTips}>没搜到哦 换个词试试～</div>}
         </div>
     );
   }

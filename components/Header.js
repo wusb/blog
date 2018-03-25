@@ -53,6 +53,7 @@ class Header extends React.Component {
     e.preventDefault();
     let keyWords = this.state.keyword;
     this.props.history.push(`/search?keyWords=${keyWords}`);
+    this.props.handleSearch && this.props.handleSearch();
   }
 
   render() {
