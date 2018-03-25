@@ -6,13 +6,6 @@ import utils from "../tools/utils";
 class PostItem extends React.Component {
   constructor(){
     super();
-    this.state = {
-
-    };
-  }
-
-  componentDidMount(){
-
   }
 
   render() {
