@@ -14,7 +14,7 @@ class PostItem extends React.Component {
     let date = new Date(item.updatedAt).format('yyyy-MM-dd');
 
     return (
-        <Link key={item.number} className={s.item} to={`/article/search/${item.number}`}>
+        <Link className={s.item} to={`/article/search/${item.number}`}>
           <h6 className={s.title}>{item.title}</h6>
           <p className={s.summary}>{text}</p>
           <p className={s.date}>{date}</p>
