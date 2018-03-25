@@ -10,6 +10,7 @@ import {
 import Index from "./page/index/index";
 import Blog from "./page/blog/index";
 import Article from './page/blog/article';
+import Search from "./page/blog/search";
 
 const router = (
     <Router>
@@ -18,6 +19,7 @@ const router = (
         <Route exact path="/blog" component={Blog} />
         <Route exact path="/blog/:type" component={Blog} />
         <Route exact path="/article/:type/:articleId" component={Article} />
+        <Route exact path="/search" component={Search} />
         <Redirect from="/" to="/"/>
       </Switch>
     </Router>
