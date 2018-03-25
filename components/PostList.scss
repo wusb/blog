@@ -1,0 +1,14 @@
+.list{
+  margin: 0 auto;
+  max-width: 768px;
+  background-color: #f6f6f6;
+}
+
+@media only screen and (min-width: 768px) {
+  .list{
+    height: calc(100vh - .5em);
+    font-size: 100px;
+    border-left: 1px solid #e6e3e3;
+    border-right: 1px solid #e6e3e3;
+  }
+}
