@@ -3,7 +3,6 @@
   background: #78BBE6;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to bottom, #1B435D, #78BBE6);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to bottom, #1B435D, #78BBE6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 }
 
 .photo{
@@ -16,10 +15,17 @@
   background-position: center;
 }
 
+.blogBtn{
+  left: .1rem;
+}
+
 .languageBtn{
+  right: .1rem;
+}
+
+.blogBtn, .languageBtn{
   position: absolute;
   top: .1rem;
-  right: .1rem;
   width: .6rem;
   height: .3rem;
   line-height: .3rem;
@@ -60,7 +66,7 @@
 }
 
 .introduce{
-  margin: .3rem .2rem;
+  padding: .3rem .2rem;
 
   p{
     font-size: .2rem;
@@ -78,22 +84,63 @@
 
 .link{
   position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
+  bottom: .2rem;
+  left: 0;
+  width: 100%;
 
   a{
     padding: 0 .04rem;
-    font-size: .18rem;
-    color: #A5ECD7;
+  }
+}
+
+.icon_link{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a{
+    height: .28rem;
+    line-height: .28rem;
+    font-size: 0;
+
     + a{
       margin-left: .06rem;
     }
   }
 
   i{
+    display: inline-block;
+    width: .28rem;
+    height: .28rem;
+    text-align: center;
+    border-radius: 50%;
+  }
+
+  .icon_github{
     font-size: .28rem;
     color: #fff;
+  }
+
+  .icon_zhihu{
+    font-size: .17rem;
+    background-color: #fff;
+    color: #80b4dc;
+  }
+}
+
+.word_link{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: .1rem;
+
+  a{
+    font-size: .14rem;
+    color: #fff;
+
+    &:hover{
+      text-decoration: underline;
+    }
   }
 }
 

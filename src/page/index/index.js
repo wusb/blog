@@ -11,7 +11,8 @@ class IndexPage extends React.Component {
         welcome: '朋友，你好！',
         name: '我是吴胜斌',
         work: '目前在上海担任前端工程师',
-        more: '更多关于我的信息，请见下方。'
+        more: '更多关于我的信息，请见下方。',
+        blog: '博客'
       }
 		};
 
@@ -37,7 +38,8 @@ class IndexPage extends React.Component {
           welcome: '朋友，你好！',
           name: '我是吴胜斌，',
           work: '目前在上海从事Web前端开发工作，',
-          more: '更多关于我的信息，请见下方。'
+          more: '更多关于我的信息，请见下方。',
+          blog: '博客'
         }
       })
     }else {
@@ -47,7 +49,8 @@ class IndexPage extends React.Component {
           welcome: 'Hi Friend,',
           name: 'I’m Simba Wu.',
           work: 'A Front End Developer in Shanghai.',
-          more: 'More about me at the bottom.'
+          more: 'More about me at the bottom.',
+          blog: 'Blog'
         }
       })
     }
@@ -58,6 +61,7 @@ class IndexPage extends React.Component {
 		return (
 			<div className={s.container}>
 				<div className={s.photo}>
+          <Link className={s.blogBtn} to='/blog'>{this.state.introduce.blog}</Link>
           <button className={s.languageBtn} onClick={() => this.changeLanguage(!this.state.chinese)}>中 / EN</button>
         </div>
 				<p className={`${s.slogan} ${this.state.chinese && s.chineseSlogan}`}></p>
@@ -69,8 +73,19 @@ class IndexPage extends React.Component {
             </div>
           </div>
           <div className={s.link}>
-            <a href="https://github.com/simbawus">github</a>
-            <Link to='/blog'>blog</Link>
+            <div className={s.icon_link}>
+              <a href="https://github.com/simbawus" target="_blank">
+                <i className={`iconfont ${s.icon_github}`}>&#xe600;</i>
+              </a>
+              <a href="https://www.zhihu.com/people/wusb/activities" target="_blank">
+                <i className={s.icon_zhihu}>知</i>
+              </a>
+            </div>
+            <div className={s.word_link}>
+              <a href="https://juejin.im/user/59cd9cb8518825745c637de0/activities" target="_blank">掘金</a>
+              <a href="https://www.jianshu.com/u/54986e6d5fa7" target="_blank">简书</a>
+              <a href="https://segmentfault.com/u/simbawu" target="_blank">segmentfault</a>
+            </div>
           </div>
 				</div>
 			</div>
