@@ -132,11 +132,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: .1rem;
+  margin-top: .12rem;
 
   a{
+    height: .12rem;
+    line-height: .12rem;
     font-size: .14rem;
-    color: #fff;
+    color: #3cefe9;
+
+    & + a{
+      border-left: 1px solid #fff;
+    }
 
     &:hover{
       text-decoration: underline;
