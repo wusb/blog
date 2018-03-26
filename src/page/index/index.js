@@ -18,6 +18,7 @@ class IndexPage extends React.Component {
 
 		this.getLanguage = this.getLanguage.bind(this);
     this.changeLanguage = this.changeLanguage.bind(this);
+    this.gotoUrl = this.gotoUrl.bind(this);
 	}
 
 	componentDidMount(){
@@ -26,11 +27,12 @@ class IndexPage extends React.Component {
 
 	getLanguage(){
 	  if(!(/zh/.test(navigator.language))){
-      this.changeLanguage(false)
+      this.changeLanguage({}, false)
     }
   }
 
-  changeLanguage(chinese){
+  changeLanguage(e, chinese){
+	  e.stopPropagation && e.stopPropagation();
 	  if(chinese){
       this.setState({
         chinese: chinese,
@@ -57,12 +59,17 @@ class IndexPage extends React.Component {
   }
 
 
+  gotoUrl(){
+	  this.props.history.push('/blog')
+  }
+
+
 	render() {
 		return (
 			<div className={s.container}>
-				<div className={s.photo}>
+				<div className={s.photo} onClick={this.gotoUrl}>
           <Link className={s.blogBtn} to='/blog'>{this.state.introduce.blog}</Link>
-          <button className={s.languageBtn} onClick={() => this.changeLanguage(!this.state.chinese)}>中 / EN</button>
+          <button className={s.languageBtn} onClick={(e) => this.changeLanguage(e, !this.state.chinese)}>中 / EN</button>
         </div>
 				<p className={`${s.slogan} ${this.state.chinese && s.chineseSlogan}`}></p>
 				<div className={s.about}>
@@ -82,6 +89,7 @@ class IndexPage extends React.Component {
               </a>
             </div>
             <div className={s.word_link}>
+              <Link to='/blog'>Blog</Link>
               <a href="https://juejin.im/user/59cd9cb8518825745c637de0/activities" target="_blank">掘金</a>
               <a href="https://www.jianshu.com/u/54986e6d5fa7" target="_blank">简书</a>
               <a href="https://segmentfault.com/u/simbawu" target="_blank">segmentfault</a>
