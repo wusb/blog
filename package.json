@@ -27,7 +27,7 @@
     "webpack-dev-server": "^2.11.1"
   },
   "scripts": {
-    "build": "webpack --config ./config/webpack/webpack.base.js",
-    "start": "webpack-dev-server --open 'Google Chrome' --config ./config/webpack/webpack.base.js"
+    "start": "webpack-dev-server --open 'Google Chrome' --config ./config/webpack/webpack.base.js",
+    "deploy": "node ./tools/deploy.js"
   }
 }
