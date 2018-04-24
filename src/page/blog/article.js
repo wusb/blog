@@ -12,7 +12,7 @@ class ArticlePage extends React.Component {
     this.state = {
       title: '',
       updatedAt: '',
-      markdown: ''
+      bodyHTML: ''
     }
   }
 
@@ -42,14 +42,14 @@ class ArticlePage extends React.Component {
       this.setState({
         title: issue.title,
         updatedAt: new Date(issue.updatedAt).format('yyyy-MM-dd'),
-        markdown: issue.bodyHTML
+        bodyHTML: issue.bodyHTML
       })
 
     })
   }
 
   _renderHTML(){
-    return { __html: this.state.markdown };
+    return { __html: this.state.bodyHTML };
   }
 
   render() {
