@@ -1,10 +1,11 @@
 import httpServer from '../../tools/httpServer';
 import GitHub from './github';
+import githubToken from '../../config/githubConfig.js'
 
 const project = {
   github:{
     baseURL: 'https://api.github.com',
-    token: '11f1779c52f5b929e0627b429b8c7a3bf8806ce1'
+    token: githubToken
   }
 };
 
