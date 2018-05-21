@@ -3,7 +3,9 @@ const spawn = require('child_process').spawn;
 const webpackConfig = require('../config/webpack/webpack.config');
 
 new Promise((resolve, reject) => {
-  webpack(webpackConfig).run((err, stats) => {
+  webpack({ mode: 'production',
+        ...webpackConfig
+      }).run((err, stats) => {
     if (err) {
       reject(err);
     } else {
