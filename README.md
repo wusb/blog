@@ -1,3 +1,7 @@
+<p align="center">
+	<img width="200" src="public/assets/image/logo.png" alt="logo">
+</p>
+
 # 个人博客 http://simbawu.com
 - 结合GitHub GraphQL API，免费开源、开箱即用；
 - 响应式布局，完美适配不同屏幕尺寸；
