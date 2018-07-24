@@ -1,5 +1,5 @@
 <p align="center">
-	<img width="200" src="public/assets/image/logo.png" alt="logo">
+	<img width="260" src="public/assets/image/logo.png" alt="logo">
 </p>
 
 # 个人博客 http://simbawu.com
